@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Project 1</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+</head>
+
+<body>
+    <center><span class='display-3'>To Do List</span></center>
+    <div class='container'>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+
+                <div class='input-group'>
+                    <input id='input-text' type='text' class='form-control' placeholder='Thing you should do...'>
+                    <span class='input-group-btn'>
+                        <input type='button' class='btn btn-success' value='Submit' onclick='submit()'>
+                    </span>
+                </div>
+                <ul id='todo-list' class='list-group'>
+                    {% for item in todo_list %}
+                    <li class='list-group-item clearfix'>
+                        <span class='text-muted' style='font-size: 20px; display: inline-block; line-height:2em;'>{{ item[0] }}</span>
+                        <div class="float-right btn-group">
+                            <input type=button class='btn btn-info' value='EDIT' onclick='update(this)'>
+                            <input type=button class='btn btn-danger' value='DELETE' onclick='remove(this)'>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    <!--generated cards go here-->
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+input[type='text'] { font-size: 20px; }
+input[type = 'button']{ font-size: 20px; }
+</style>
+
+</html>

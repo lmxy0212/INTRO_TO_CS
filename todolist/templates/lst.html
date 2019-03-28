@@ -1,0 +1,18 @@
+<!doctype html>
+<style type = "text/css">.tab { margin-left: 40px; }</style>
+
+<body>
+<p>{</p>
+<p class="tab">result: {{result}}</p>
+
+<p class="tab">data:[</p>
+<ul>
+    {% for todo in todo_lst %}
+    <dt class="tab"><q>{{todo}}</q></dt>
+    {% endfor %}
+</ul>
+<p class="tab">]</p>
+<p>}</p>
+
+
+</body>

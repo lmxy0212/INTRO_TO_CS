@@ -1,0 +1,20 @@
+<?php
+    if (isset($_GET['src'])) {
+        highlight_file('index.php');
+        die();
+    }
+
+    if ($_GET['get_param'] === "Hello world!") {
+        echo file_get_contents("/flag.txt");
+        die();
+    }
+?>
+<html>
+    <head>
+        <title>Intro to PHP</title>
+    </head>
+    <body>
+        <p>Can you get the flag?</p>
+        <p style="font-size: 2px"><a href="?src=1">Click here</a> to see source</p>
+    </body>
+</html>

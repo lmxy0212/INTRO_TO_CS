@@ -1,0 +1,20 @@
+<html>
+  <head>
+  <script type='text/javascript' src='{{url_for('static', filename='login.js')}}'></script>
+  <link rel='stylesheet' href='{{url_for('static', filename='style.css')}}'>
+  </head>
+  <body>
+    <div class='registerContainer'>
+      <h2>Sign up for the echo chamber today!</h2>
+      <br />
+      <img class='smile' src='{{url_for('static', filename='assets/smiley.png')}}' alt='smiley' />
+      <br />
+      <label for='email'>Email</label>
+      <input id='email' name='email' type='text' />
+      <label for='password'>Password</label>
+      <input id='password' name='password' type='password' />
+      <br />
+      <button onclick='register()'>Register</button>
+    </div>
+  </body>
+</html>
